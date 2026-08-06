@@ -472,3 +472,6 @@ assets/migrations/pre_unified/
 
 # ASP Benchmarks
 data/benchmarks/
+
+*.egg-info/
+site/

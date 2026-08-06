@@ -1,14 +1,16 @@
 # libraries/python/torch/torch_model.py
 # Simple PyTorch neural network example.
 
-import torch
 import torch.nn as nn
 import torch.optim as optim
+
+import torch
+
 
 # 1. Define network architecture
 class PolyglotClassifier(nn.Module):
     def __init__(self, input_dim=10):
-        super(PolyglotClassifier, self).__init__()
+        super().__init__()
         self.fc1 = nn.Linear(input_dim, 32)
         self.relu = nn.ReLU()
         self.fc2 = nn.Linear(32, 1)
@@ -20,6 +22,7 @@ class PolyglotClassifier(nn.Module):
         x = self.fc2(x)
         x = self.sigmoid(x)
         return x
+
 
 # 2. Instantiate model, loss, and optimizer
 model = PolyglotClassifier(input_dim=10)

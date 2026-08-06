@@ -6,16 +6,21 @@ on:
     branches: [main]
     paths:
       - "**/benchmark/**"
-      - "**/benches/**"
 
 jobs:
-  benchmark:
+  benchmark-cpp:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
-      - run: cargo bench
-        working-directory: rust
+      - run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --target desktop_app_template_benchmark -j
+          ./build/benchmark/desktop_app_template_benchmark
+
+  benchmark-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
-      - run: uv sync --group dev && uv run pytest benchmark --benchmark-only
-        working-directory: python
+      - run: uv sync --all-extras --dev && uv run pytest benchmark --benchmark-only
+        working-directory: backend

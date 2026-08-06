@@ -1,6 +1,7 @@
-# Dev-Repo-Template Documentation
+# Desktop-App-Template Documentation
 
-Welcome to the documentation portal for this repository. This site is built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/); the Python API reference is generated separately with [Sphinx](sphinx/index.rst) via `autoapi`.
+Welcome to the documentation portal for Desktop-App-Template — a hybrid desktop application framework combining a C++ backend engine, Python middleware & deep learning models (PyTorch/TensorFlow), and PySide6 Qt GUI modules.
+
 
 > **TODO:** Replace this landing page with a real project overview once this template is used to seed a product repository.
 
@@ -10,5 +11,5 @@ Welcome to the documentation portal for this repository. This site is built with
 - [Development](DEVELOPMENT.md) — local setup
 - [Testing](TESTING.md) — how to run and write tests
 - [Troubleshooting](TROUBLESHOOTING.md) — common problems and fixes
-- [`docs/moon/ROADMAP.md`](docs/moon/ROADMAP.md) — what's planned
-- [`docs/moon/CHANGELOG.md`](docs/moon/CHANGELOG.md) — what shipped
+- [Roadmap](moon/ROADMAP.md) — what's planned
+- [Changelog](moon/CHANGELOG.md) — what shipped

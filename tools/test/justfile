@@ -1,30 +1,15 @@
-# tools/test — run every language module's test suite.
+# tools/test — run test suites across C++, backend, and GUI modules.
 
 set shell := ["bash", "-c"]
 
 # Run all test suites
-all: python typescript javascript kotlin java rust go cpp
-
-python:
-    cd python && uv run pytest test -v
-
-typescript:
-    cd typescript && npm test
-
-javascript:
-    cd website/javascript && npm test
-
-kotlin:
-    cd kotlin && ./gradlew test
-
-java:
-    cd java && mvn -B test
-
-rust:
-    cd rust && cargo test
-
-go:
-    cd go && go test ./...
+all: cpp backend gui
 
 cpp:
-    cmake -S cpp -B cpp/build -DBUILD_TESTING=ON && cmake --build cpp/build -j && ctest --test-dir cpp/build --output-on-failure
+    cd ../.. && cmake -S . -B build -DBUILD_TESTING=ON && cmake --build build -j && ctest --test-dir build --output-on-failure
+
+backend:
+    cd ../../backend && uv run pytest test -v
+
+gui:
+    cd ../../gui && uv run pytest test -v

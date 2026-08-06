@@ -7,13 +7,12 @@ name = "desktop-app-template-backend"
 version = "0.1.0"
 description = "Python backend module template for Desktop-App-Template."
 readme = "README.md"
-license = { file = "../LICENSE.md" }
+license = "AGPL-3.0-only"
 requires-python = ">=3.11"
 authors = [{ name = "ACFHarbinger" }]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: GNU Affero General Public License v3",
     "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
@@ -41,5 +40,7 @@ python_version = "3.11"
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
-testpaths = ["test"]
+testpaths = ["test", "benchmark"]
+pythonpath = ["."]
+python_files = ["test_*.py", "*_test.py", "bench_*.py"]
 addopts = "-ra"

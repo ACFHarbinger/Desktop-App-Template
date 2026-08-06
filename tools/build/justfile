@@ -1,30 +1,15 @@
-# tools/build — compile every language module.
+# tools/build — compile C++, backend, and gui modules.
 
 set shell := ["bash", "-c"]
 
 # Build all modules
-all: python typescript javascript kotlin java rust go cpp
-
-python:
-    cd python && uv build
-
-typescript:
-    cd typescript && npm run build
-
-javascript:
-    cd website/javascript && npm run build
-
-kotlin:
-    cd kotlin && ./gradlew build
-
-java:
-    cd java && mvn -B package
-
-rust:
-    cd rust && cargo build --release
-
-go:
-    cd go && go build ./...
+all: cpp backend gui
 
 cpp:
-    cmake -S cpp -B cpp/build -DCMAKE_BUILD_TYPE=Release && cmake --build cpp/build -j
+    cd ../.. && cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j
+
+backend:
+    cd ../../backend && uv build
+
+gui:
+    cd ../../gui && python3 resources/generate_qrc.py && uv build

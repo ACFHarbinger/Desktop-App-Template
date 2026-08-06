@@ -1,15 +1,16 @@
-site_name: Dev-Repo-Template Documentation
+site_name: Desktop-App-Template Documentation
 site_description: >-
-  Unified documentation portal for repositories generated from Dev-Repo-Template.
+  Unified documentation portal for repositories generated from Desktop-App-Template.
 site_author: ACFHarbinger
-repo_url: https://github.com/ACFHarbinger/Dev-Repo-Template
-repo_name: ACFHarbinger/Dev-Repo-Template
+repo_url: https://github.com/ACFHarbinger/Desktop-App-Template
+repo_name: ACFHarbinger/Desktop-App-Template
 edit_uri: edit/main/docs/
 
 docs_dir: .
 site_dir: ../site
 exclude_docs: |
   sphinx/conf.py
+  website/*
 
 theme:
   name: material
@@ -43,7 +44,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: [../python/src]
+          paths: [../backend/src, ../gui/src]
           options:
             docstring_style: google
             show_source: true
@@ -59,6 +60,8 @@ nav:
   - Benchmarks: BENCHMARKS.md
   - Troubleshooting: TROUBLESHOOTING.md
   - Glossary: GLOSSARY.md
-  - Architecture Decisions: adr/
-  - Roadmap: docs/moon/ROADMAP.md
-  - Changelog: docs/moon/CHANGELOG.md
+  - Architecture Decisions:
+      - Overview: adr/0001-record-architecture-decisions.md
+      - Module Layout: adr/0002-polyglot-module-layout.md
+  - Roadmap: moon/ROADMAP.md
+  - Changelog: moon/CHANGELOG.md

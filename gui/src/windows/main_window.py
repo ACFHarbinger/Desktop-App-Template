@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from gui.src.components.status_bar import CustomStatusBar
+from gui.src.controllers.backend_bridge import BackendBridge
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QHBoxLayout,
@@ -12,9 +14,6 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
-
-from gui.src.components.status_bar import CustomStatusBar
-from gui.src.controllers.backend_bridge import BackendBridge
 
 
 class MainWindow(QMainWindow):

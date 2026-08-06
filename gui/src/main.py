@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 import sys
-from PySide6.QtWidgets import QApplication
 
 from gui.src.windows.main_window import MainWindow
+from PySide6.QtWidgets import QApplication
 
 
 def main() -> int:
