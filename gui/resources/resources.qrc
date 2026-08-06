@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/gui">
+    <file>../qml/Main.qml</file>
+    <file>../qml/Style.qml</file>
+    <file>../qml/components/AppButton.qml</file>
+</qresource>
+</RCC>

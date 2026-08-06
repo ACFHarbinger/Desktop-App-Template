@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "desktop-app-template-gui"
+version = "0.1.0"
+description = "PySide6 Qt GUI module for Desktop-App-Template."
+readme = "README.md"
+license = { file = "../LICENSE.md" }
+requires-python = ">=3.11"
+authors = [{ name = "ACFHarbinger" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "pyside6>=6.6.0",
+    "shiboken6>=6.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-qt>=4.4.0",
+    "ruff>=0.5.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.setuptools.packages.find]
+where = ["."]
