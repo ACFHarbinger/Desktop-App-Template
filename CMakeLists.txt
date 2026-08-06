@@ -1,9 +1,26 @@
-# Root CMakeLists.txt — thin wrapper that delegates to cpp/.
-#
-# This repository has no unified top-level build; each language module is
-# built independently (see the root justfile). This file exists only so
-# `cmake -S . -B build` from the repo root also works for the C++ module.
 cmake_minimum_required(VERSION 3.20)
-project(dev_repo_template LANGUAGES CXX)
+project(desktop_app_template_cpp LANGUAGES CXX)
 
-add_subdirectory(cpp)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+option(BUILD_TESTING "Build tests" OFF)
+option(BUILD_BENCHMARK "Build benchmarks" OFF)
+
+add_library(desktop_app_template_cpp STATIC
+    src/greet.cpp
+)
+target_include_directories(desktop_app_template_cpp PUBLIC include)
+
+add_executable(desktop_app_template_cli src/main.cpp)
+target_link_libraries(desktop_app_template_cli PRIVATE desktop_app_template_cpp)
+
+if(BUILD_TESTING)
+    enable_testing()
+    add_subdirectory(test)
+endif()
+
+if(BUILD_BENCHMARK)
+    add_subdirectory(benchmark)
+endif()
+

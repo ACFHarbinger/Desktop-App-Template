@@ -9,5 +9,6 @@ if(NOT benchmark_FOUND)
     FetchContent_MakeAvailable(googlebenchmark)
 endif()
 
-add_executable(dev_repo_template_benchmark greet_benchmark.cpp)
-target_link_libraries(dev_repo_template_benchmark PRIVATE dev_repo_template_cpp benchmark::benchmark_main)
+add_executable(desktop_app_template_benchmark greet_benchmark.cpp)
+target_link_libraries(desktop_app_template_benchmark PRIVATE desktop_app_template_cpp benchmark::benchmark_main)
+

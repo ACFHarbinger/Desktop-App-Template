@@ -8,8 +8,9 @@ if(NOT GTest_FOUND)
     FetchContent_MakeAvailable(googletest)
 endif()
 
-add_executable(dev_repo_template_tests greet_test.cpp)
-target_link_libraries(dev_repo_template_tests PRIVATE dev_repo_template_cpp GTest::gtest_main)
+add_executable(desktop_app_template_tests greet_test.cpp)
+target_link_libraries(desktop_app_template_tests PRIVATE desktop_app_template_cpp GTest::gtest_main)
 
 include(GoogleTest)
-gtest_discover_tests(dev_repo_template_tests)
+gtest_discover_tests(desktop_app_template_tests)
+
