@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: polyglot-app-template
+  name: desktop-app-repo
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: polyglot-app-template.example.com
+    - host: desktop-app-repo.example.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: polyglot-app-template
+                name: desktop-app-repo
                 port:
                   number: 80

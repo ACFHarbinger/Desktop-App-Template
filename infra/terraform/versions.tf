@@ -15,8 +15,8 @@ terraform {
 
   # TODO: configure a remote state backend before using this in a team setting.
   # backend "s3" {
-  #   bucket = "polyglot-app-template-tfstate"
-  #   key    = "polyglot-app-template/terraform.tfstate"
+  #   bucket = "desktop-app-repo-tfstate"
+  #   key    = "desktop-app-repo/terraform.tfstate"
   #   region = "us-east-1"
   # }
 }

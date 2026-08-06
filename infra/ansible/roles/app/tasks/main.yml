@@ -1,12 +1,12 @@
 ---
 - name: Ensure app directory exists
   ansible.builtin.file:
-    path: /opt/polyglot-app-template
+    path: /opt/desktop-app-repo
     state: directory
     mode: "0755"
 
 - name: Template environment file
   ansible.builtin.template:
     src: env.j2
-    dest: /opt/polyglot-app-template/.env
+    dest: /opt/desktop-app-repo/.env
     mode: "0600"

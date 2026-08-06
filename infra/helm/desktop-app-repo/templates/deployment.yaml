@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "polyglot-app-template.name" . }}
+  name: {{ include "desktop-app-repo.name" . }}
   labels:
-    {{- include "polyglot-app-template.labels" . | nindent 4 }}
+    {{- include "desktop-app-repo.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "polyglot-app-template.labels" . | nindent 6 }}
+      {{- include "desktop-app-repo.labels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "polyglot-app-template.labels" . | nindent 8 }}
+        {{- include "desktop-app-repo.labels" . | nindent 8 }}
     spec:
       containers:
         - name: app
@@ -22,6 +22,6 @@ spec:
             - containerPort: {{ .Values.service.targetPort }}
           envFrom:
             - configMapRef:
-                name: {{ include "polyglot-app-template.name" . }}-config
+                name: {{ include "desktop-app-repo.name" . }}-config
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

@@ -1,3 +1,3 @@
 environment  = "dev"
-project_name = "polyglot-app-template"
+project_name = "desktop-app-repo"
 region       = "us-east-1"

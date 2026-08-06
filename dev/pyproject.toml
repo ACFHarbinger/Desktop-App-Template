@@ -1,5 +1,5 @@
 [project]
-name = "polyglot-app-template-dev-assistant"
+name = "desktop-app-repo-dev-assistant"
 version = "0.1.0"
 description = "Polyglot developer-assistant tool: dependency-graph visualization, circular-import detection, layer-violation checks."
 requires-python = ">=3.11"

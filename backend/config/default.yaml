@@ -1,6 +1,6 @@
 # Example runtime configuration.
 app:
-  name: polyglot-app-template
+  name: desktop-app-repo
   log_level: INFO
 
 greeting:

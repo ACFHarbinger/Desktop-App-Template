@@ -12,7 +12,7 @@ REPO_ROOT = Path(__file__).parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
 # ── Project metadata ─────────────────────────────────────────────────────────
-project = "Polyglot-App-Template — Python Reference"
+project = "Desktop-App-Repo — Python Reference"
 author = "ACFHarbinger"
 release = "0.1.0"
 html_title = "Python API Reference"

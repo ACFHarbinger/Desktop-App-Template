@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: polyglot-app-template-dev
+namespace: desktop-app-repo-dev
 
 resources:
   - ../../base
@@ -9,17 +9,17 @@ resources:
 patches:
   - target:
       kind: Deployment
-      name: polyglot-app-template
+      name: desktop-app-repo
     patch: |-
       - op: replace
         path: /spec/replicas
         value: 1
       - op: replace
         path: /spec/template/spec/containers/0/image
-        value: polyglot-app-template:dev
+        value: desktop-app-repo:dev
 
 configMapGenerator:
-  - name: polyglot-app-template-config
+  - name: desktop-app-repo-config
     behavior: merge
     literals:
       - APP_LOG_LEVEL=DEBUG

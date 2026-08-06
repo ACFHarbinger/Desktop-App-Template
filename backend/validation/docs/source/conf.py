@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath("../../"))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Polyglot-App-Template"
+project = "Desktop-App-Repo"
 copyright = "2026, ACFHarbinger"
 author = "ACFHarbinger"
 release = "1.1.0"

@@ -5,6 +5,6 @@ teams that prefer `helm install` over `kubectl apply -k`. Pick one, don't run
 both against the same cluster/namespace.
 
 ```bash
-helm lint infra/helm/polyglot-app-template
-helm install polyglot-app-template infra/helm/polyglot-app-template -f infra/helm/polyglot-app-template/values.yaml
+helm lint infra/helm/desktop-app-repo
+helm install desktop-app-repo infra/helm/desktop-app-repo -f infra/helm/desktop-app-repo/values.yaml
 ```

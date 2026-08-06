@@ -1,5 +1,5 @@
 /*
- * Polyglot-App-Template — Structurizr DSL workspace (C4 model)
+ * Desktop-App-Repo — Structurizr DSL workspace (C4 model)
  *
  * See docs/structurizr/README.md for rendering instructions.
  *
@@ -7,7 +7,7 @@
  * template is used to seed a product repository.
  */
 
-workspace "Polyglot-App-Template" "Placeholder C4 model for a repository generated from this template." {
+workspace "Desktop-App-Repo" "Placeholder C4 model for a repository generated from this template." {
 
     model {
         user = person "User" "Interacts with the system."

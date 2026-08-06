@@ -1,5 +1,5 @@
 apiVersion: v2
-name: polyglot-app-template
+name: desktop-app-repo
 description: Helm chart packaging the same Deployment/Service/Ingress as infra/k8s/base.
 type: application
 version: 0.1.0

@@ -7,7 +7,7 @@ variable "environment" {
 variable "project_name" {
   description = "Short name used to prefix provisioned resources."
   type        = string
-  default     = "polyglot-app-template"
+  default     = "desktop-app-repo"
 }
 
 variable "region" {

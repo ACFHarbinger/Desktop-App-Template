@@ -1,5 +1,5 @@
 {
-    "name": "Polyglot-App-Template Dev Environment",
+    "name": "Desktop-App-Repo Dev Environment",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."

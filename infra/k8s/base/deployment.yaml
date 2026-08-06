@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: polyglot-app-template
+  name: desktop-app-repo
   labels:
-    app: polyglot-app-template
+    app: desktop-app-repo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: polyglot-app-template
+      app: desktop-app-repo
   template:
     metadata:
       labels:
-        app: polyglot-app-template
+        app: desktop-app-repo
     spec:
       containers:
         - name: app
           # TODO: point at your real registry once infra/docker/Dockerfile is published there.
-          image: polyglot-app-template:latest
+          image: desktop-app-repo:latest
           ports:
             - containerPort: 8000
           envFrom:
             - configMapRef:
-                name: polyglot-app-template-config
+                name: desktop-app-repo-config
           readinessProbe:
             httpGet:
               path: /healthz
