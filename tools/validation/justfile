@@ -6,7 +6,7 @@ set shell := ["bash", "-c"]
 all: cpp backend gui
 
 cpp:
-    cd ../.. && (command -v clang-format >/dev/null && find src include test -name '*.cpp' -o -name '*.hpp' -o -name '*.h' | xargs clang-format --dry-run --Werror || echo "clang-format not available, skipping C++ lint")
+    cd ../../base && (command -v clang-format >/dev/null && find src include test benchmark -name '*.cpp' -o -name '*.hpp' -o -name '*.h' | xargs clang-format --dry-run --Werror || echo "clang-format not available, skipping C++ lint")
 
 backend:
     cd ../../backend && uv run ruff check src test && uv run ruff format --check src test

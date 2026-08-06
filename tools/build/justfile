@@ -6,7 +6,7 @@ set shell := ["bash", "-c"]
 all: cpp backend gui
 
 cpp:
-    cd ../.. && cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j
+    cd ../../base && cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j
 
 backend:
     cd ../../backend && uv build

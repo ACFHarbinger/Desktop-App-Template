@@ -5,7 +5,7 @@ set shell := ["bash", "-c"]
 all: cpp backend
 
 cpp:
-    cd ../.. && cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_BENCHMARK=ON && cmake --build build --target desktop_app_template_benchmark -j && ./build/benchmark/desktop_app_template_benchmark
+    cd ../../base && cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_BENCHMARK=ON && cmake --build build --target desktop_app_template_benchmark -j && ./build/benchmark/desktop_app_template_benchmark
 
 backend:
     cd ../../backend && uv run --extra dev pytest benchmark --benchmark-only

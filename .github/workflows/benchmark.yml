@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-          cmake --build build --target desktop_app_template_benchmark -j
-          ./build/benchmark/desktop_app_template_benchmark
+          cmake -S base -B base/build -DCMAKE_BUILD_TYPE=Release -DBUILD_BENCHMARK=ON
+          cmake --build base/build --target desktop_app_template_benchmark -j
+          ./base/build/benchmark/desktop_app_template_benchmark
 
   benchmark-backend:
     runs-on: ubuntu-latest

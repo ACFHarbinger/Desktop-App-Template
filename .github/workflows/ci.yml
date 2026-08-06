@@ -17,9 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
-          cmake --build build --parallel
-      - run: ctest --test-dir build --output-on-failure
+          cmake -S base -B base/build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
+          cmake --build base/build --parallel
+      - run: ctest --test-dir base/build --output-on-failure
 
   lint-test-backend:
     runs-on: ubuntu-latest

@@ -25,4 +25,4 @@ pre-commit:
 clean:
     rm -rf ../../backend/.pytest_cache ../../backend/.ruff_cache ../../backend/.mypy_cache ../../backend/**/__pycache__
     rm -rf ../../gui/.pytest_cache ../../gui/.ruff_cache ../../gui/.mypy_cache ../../gui/**/__pycache__
-    rm -rf ../../build
+    rm -rf ../../base/build ../../build

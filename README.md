@@ -32,7 +32,7 @@
 ## About
 
 `Desktop-App-Template` is a modern, modular template repository designed for high-performance desktop applications. It provides a clean hybrid architecture:
-- **C++ Base Engine** (`src/`, `include/`): For resource-intensive, performance-critical backend computations.
+- **C++ Base Engine** (`base/`): For resource-intensive, performance-critical backend computations.
 - **Python Backend & Middleware** (`backend/`): Connects C++ native modules to the frontend, manages business logic, and orchestrates PyTorch/TensorFlow deep learning models.
 - **PySide6 Qt GUI Module** (`gui/`): Rich Qt Widgets & QML user interfaces, custom components, resources, and UI test suites.
 
@@ -40,8 +40,11 @@
 
 ```
 Desktop-App-Template/
-├── CMakeLists.txt              # C++ base build system
-├── src/, include/, test/       # C++ high-performance engine source, headers, tests
+├── base/                       # C++ high-performance engine base module (CMake, src, include, test, benchmark)
+│   ├── CMakeLists.txt
+│   ├── src/, include/
+│   ├── test/
+│   └── benchmark/
 ├── backend/                    # Python middleware & PyTorch/TensorFlow deep learning engine
 │   ├── pyproject.toml
 │   ├── src/                    # Backend source (flow, jinja, torch integrations)

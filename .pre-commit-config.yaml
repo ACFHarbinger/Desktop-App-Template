@@ -49,7 +49,7 @@ repos:
         name: clang-format (C++ sources)
         language: system
         entry: bash -c 'clang-format --dry-run --Werror "$@"' --
-        files: ^(src|include|test|benchmark)/.*\.(cpp|hpp|h)$
+        files: ^base/(src|include|test|benchmark)/.*\.(cpp|hpp|h)$
         pass_filenames: true
 
   # ── Markdown: link checker ───────────────────────────────────────────────

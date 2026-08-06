@@ -6,7 +6,7 @@ set shell := ["bash", "-c"]
 all: cpp backend gui
 
 cpp:
-    cd ../.. && cmake -S . -B build -DBUILD_TESTING=ON && cmake --build build -j && ctest --test-dir build --output-on-failure
+    cd ../../base && cmake -S . -B build -DBUILD_TESTING=ON && cmake --build build -j && ctest --test-dir build --output-on-failure
 
 backend:
     cd ../../backend && uv run pytest test -v
