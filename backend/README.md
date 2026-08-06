@@ -1,4 +1,4 @@
-# python/
+# backend/
 
 Python module template. Managed with [uv](https://github.com/astral-sh/uv).
 

@@ -15,7 +15,7 @@ def greet(name: str) -> str:
 
 def main() -> None:
     logging.basicConfig(level=logging.INFO)
-    parser = argparse.ArgumentParser(description="Dev-Repo-Template Python example")
+    parser = argparse.ArgumentParser(description="Desktop-App-Template Python backend example")
     parser.add_argument("--name", default="world", help="Name to greet")
     args = parser.parse_args()
     print(greet(args.name))
