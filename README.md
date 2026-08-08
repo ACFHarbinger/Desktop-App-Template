@@ -14,7 +14,7 @@
 </br>
 
 <a href="https://github.com/ACFHarbinger/Desktop-App-Template/releases"><img alt="Release" src="https://img.shields.io/github/v/release/ACFHarbinger/Desktop-App-Template?include_prereleases&logo=github&color=blue"></a>
-<a href="LICENSE.md"><img alt="License" src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"></a>
+<a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"></a>
 <a href="https://github.com/ACFHarbinger/Desktop-App-Template/issues"><img alt="Open Issues" src="https://img.shields.io/github/issues/ACFHarbinger/Desktop-App-Template?color=yellow"></a>
 <a href="https://github.com/ACFHarbinger/Desktop-App-Template/commits/main"><img alt="Last Commit" src="https://img.shields.io/github/last-commit/ACFHarbinger/Desktop-App-Template?color=blueviolet"></a>
 
@@ -80,4 +80,4 @@ just test
 
 ## License
 
-Dual-licensed under GNU AGPL-3.0 and Commercial terms. See [`LICENSE.md`](LICENSE.md) and [`LICENSE.txt`](LICENSE.txt) for details.
+Dual-licensed under GNU AGPL-3.0 and Commercial terms. See [`LICENSE`](LICENSE) and [`LICENSE`](LICENSE) for details.

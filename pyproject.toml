@@ -3,7 +3,7 @@ name = "desktop-app-template"
 version = "0.1.0"
 description = "Root workspace manifest for Desktop-App-Template (C++ base, Python backend, PySide6 Qt GUI)."
 readme = "README.md"
-license = { file = "LICENSE.md" }
+license = { file = "LICENSE" }
 requires-python = ">=3.11"
 authors = [{ name = "ACFHarbinger" }]
 dependencies = []
