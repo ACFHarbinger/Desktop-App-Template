@@ -4,11 +4,11 @@
 # specific (see the note under the "sync" stage below) and has no GitLab job here.
 
 stages:
+  - sync
   - test
   - security
   - docs
   - benchmark
-
 # ==========================================
 # STAGE: TEST (ci.yml)
 # ==========================================
@@ -168,3 +168,25 @@ benchmark:
 # drop-in translation exists, and porting the script itself is out of scope
 # for a CI-config mirror. No GitLab job is defined for this; enable a
 # GitLab-native equivalent separately if backlog automation is needed here.
+
+# ==========================================
+# STAGE: SYNC (agent_sync.yml)
+# ==========================================
+agent-backlog-sync:
+    stage: sync
+    image: python:3.12
+    rules:
+        - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
+          changes:
+              - "docs/moon/ROADMAP.md"
+              - "docs/moon/CHANGELOG.md"
+        - if: '$CI_PIPELINE_SOURCE == "web"'
+    before_script:
+        - pip install uv
+        - uv sync --project git
+    script:
+        - uv run --project git python -c "import json,pathlib; json.loads(pathlib.Path('git/config/project_labels.json').read_text())"
+        - uv run --project git python -c "import yaml,pathlib; yaml.safe_load(pathlib.Path('git/config/automation_rules.yaml').read_text())"
+        - uv run --project git python -m git.scripts.sync_backlog --repo-owner ACFHarbinger --repo-name Desktop-App-Template --project-id "$PROJECT_ID"
+    variables:
+        GITHUB_TOKEN: $PROJECT_AUTOMATION_TOKEN
